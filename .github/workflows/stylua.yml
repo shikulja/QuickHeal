@@ -7,20 +7,36 @@ on:
     branches: [ "rework-healmodes-and-max-HPS" ]
   pull_request:
     branches: [ "rework-healmodes-and-max-HPS" ]
-                  
-    name: stylua
-run-name: ${{ github.actor }} is learning GitHub Actions
+
 jobs:
-  check-lua:
+  integration:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: JohnnyMorganz/stylua-action@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-          # CLI arguments
-           args: --search-parent-directories  . 
-           
-           run: stylua
- #- run: cargo install stylua
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: stylua
+      uses: JohnnyMorganz/stylua-action@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
+        args: --search-parent-directories  . 
+
+    - name: Setup luarocks
+      uses: leafo/gh-actions-luarocks@v4
+
+    - name: Setup tools
+      shell: bash
+      run: |
+        sudo apt install -y curl unzip --no-install-recommends
+        bash ./utils/install_stylua.sh
+        luarocks install luacheck
+        luarocks install vusted
+    - name: Run tests
+      shell: bash
+      run: make integration
+
+    - name: Run tests
+      shell: bash
+      run: stylua
