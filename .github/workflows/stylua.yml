@@ -25,11 +25,12 @@ jobs:
         args: -g '*.lua' -- .
     - name: Apply Actions
       uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
+      with:
+        ref: ${{ github.head_ref }}
+    - name: Apply Actions 2
       uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Apply changes
+          commit_message: stylua formatting
  #   - name: Setup luarocks
  #     uses: leafo/gh-actions-luarocks@v4
 
