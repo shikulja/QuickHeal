@@ -23,9 +23,9 @@ jobs:
     - name: Setup luarocks
       uses: leafo/gh-actions-luarocks@v4
 
-    - name: Setup tools
-      shell: bash
-      run: |
+ #   - name: Setup tools
+ #     shell: bash
+ #     run: |
         sudo apt install -y curl unzip --no-install-recommends
         bash ./utils/install_stylua.sh
         luarocks install luacheck
@@ -34,6 +34,6 @@ jobs:
  #     shell: bash
  #     run: make integration
 
-#    - name: Run tests
- #    shell: bash
-#     run: Stylua
+     - name: Run tests
+       shell: bash
+       run: stylua
