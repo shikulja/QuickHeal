@@ -34,7 +34,7 @@ jobs:
  #----------samples-----------------------------------
  #   - name: Setup luarocks
  #     uses: leafo/gh-actions-luarocks@v4
-
+ #
  #   - name: Setup tools
  #     shell: bash
  #     run: |
@@ -45,7 +45,7 @@ jobs:
  #   - name: Run tests
  #     shell: bash
  #     run: make integration
- 
+ #
  #   - name: Run tests
  #     shell: bash
  #     run: stylua
@@ -69,7 +69,7 @@ jobs:
  #                  sudo luarocks install luacheck
  #            - name: Lint
  #              run: luacheck lua/ --globals vim
- -----------------------------------------------------
+ #-----------------------------------------------------
 
 
 # Configuration
