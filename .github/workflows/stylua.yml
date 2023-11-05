@@ -35,5 +35,5 @@ jobs:
  #     run: make integration
 
     - name: Run tests
-      shell: bash
+ #    shell: bash
       run: stylua
