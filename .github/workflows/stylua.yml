@@ -18,6 +18,8 @@ jobs:
         with:
           toolchain: stable
       - run: cargo build --release --all-features
+
+ #- run: cargo install stylua
       
 jobs:
     stylua:
@@ -29,9 +31,7 @@ jobs:
               with:
                   # token is needed because the action allegedly downloads binary from github releases
                   token: ${{ secrets.GITHUB_TOKEN }}
+                  version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
                   # CLI arguments
                   args: --check .
-                  version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
                   #run: stylua
-
-
