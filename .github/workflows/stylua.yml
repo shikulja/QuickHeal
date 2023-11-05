@@ -22,5 +22,5 @@ jobs:
           # CLI arguments
            args: --search-parent-directories  . 
            
-           #run: stylua
+           run: stylua
  #- run: cargo install stylua
