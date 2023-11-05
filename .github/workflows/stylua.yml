@@ -1,10 +1,12 @@
 name: Stylua check
 
+# Controls when the workflow will run
 on:
-    push:
-        branches:
-            - "main"
-    pull_request:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: [ "rework-healmodes-and-max-HPS" ]
+  pull_request:
+    branches: [ "rework-healmodes-and-max-HPS" ]
 
 jobs:
     stylua:
@@ -19,3 +21,4 @@ jobs:
                   # CLI arguments
                   args: --check .
                   version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
+        run: stylua
