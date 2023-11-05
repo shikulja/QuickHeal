@@ -11,7 +11,7 @@ on:
     name: stylua
 run-name: ${{ github.actor }} is learning GitHub Actions
 jobs:
-  check-bats-version:
+  check-lua:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -22,5 +22,5 @@ jobs:
           # CLI arguments
            #args: --check .   
            
-           run: stylua
+           #run: stylua
  #- run: cargo install stylua
