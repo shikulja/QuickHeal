@@ -8,26 +8,18 @@ on:
   pull_request:
     branches: [ "rework-healmodes-and-max-HPS" ]
 
-jobs:
-  build_and_test:
-    name: Rust project
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-      - run: cargo build --release --all-features
 
  #- run: cargo install stylua
-      steps:
-            - uses: actions/checkout@v3
-            - name: Run Stylua check
-              uses: JohnnyMorganz/stylua-action@v3
-              with:
-                  # token is needed because the action allegedly downloads binary from github releases
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-                  # CLI arguments
-                  args: --check .
+- uses: actions/checkout@v3
+- uses: JohnnyMorganz/stylua-action@v3
+  with:
+    token: ${{ secrets.GITHUB_TOKEN }}
+    version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
+    # CLI arguments
+    args: --check .
                   #run: stylua
+
+
+       
+
+
