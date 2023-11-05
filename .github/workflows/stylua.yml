@@ -19,8 +19,6 @@ jobs:
           toolchain: stable
       - run: cargo build --release --all-features
 
-
-jobs:
     stylua:
         runs-on: ubuntu-latest
         steps:
