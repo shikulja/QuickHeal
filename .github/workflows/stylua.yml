@@ -20,8 +20,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
           # CLI arguments
-          args: --check .         
-                  
-                  
-                  #run: stylua
+           #args: --check .   
+           
+           run: stylua
  #- run: cargo install stylua
