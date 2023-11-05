@@ -49,5 +49,8 @@ jobs:
  #     shell: bash
  #     run: stylua
 
-
+# Used and useful tools
+# https://github.com/JohnnyMorganz/StyLua (An opinionated Lua code formatter)
+# https://github.com/stefanzweifel/git-auto-commit-action (directly commit formatting)
+# https://github.com/peter-evans/create-pull-request (open a pull request with fixed formatting)
 
