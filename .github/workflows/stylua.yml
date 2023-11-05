@@ -1,0 +1,21 @@
+name: Stylua check
+
+on:
+    push:
+        branches:
+            - "main"
+    pull_request:
+
+jobs:
+    stylua:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Run Stylua check
+              uses: JohnnyMorganz/stylua-action@v3
+              with:
+                  # token is needed because the action allegedly downloads binary from github releases
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  # CLI arguments
+                  args: --check .
+                  version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
