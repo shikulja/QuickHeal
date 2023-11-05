@@ -31,6 +31,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: stylua formatting
+ #----------samples-----------------------------------
  #   - name: Setup luarocks
  #     uses: leafo/gh-actions-luarocks@v4
 
@@ -48,9 +49,48 @@ jobs:
  #   - name: Run tests
  #     shell: bash
  #     run: stylua
+ #----------------------------------------------------
+ 
+ #-----------samples----------------------------------
+ # name: Lint
+ #
+ # on: [push, pull_request]
+ #
+ # jobs:
+ #     lint:
+ #        name: Luacheck
+ #        runs-on: ubuntu-latest
+ #        steps:
+ #            - uses: actions/checkout@v2
+ #            - name: Setup
+ #              run: |
+ #                  sudo apt-get update
+ #                  sudo apt-get install luarocks
+ #                  sudo luarocks install luacheck
+ #            - name: Lint
+ #              run: luacheck lua/ --globals vim
+ -----------------------------------------------------
 
-# Used and useful tools
+
+# Configuration
+# git: .gitattributes, .gitignore
+# stylua: args: in yml, .styluaignore, .stylua.toml
+# git-auto-commit-action: action.yml
+## pre-commit: .pre-commit-config.yaml
+
+# Used tools
+# https://github.com/JohnnyMorganz/stylua-action (GitHub action for StyLua)
 # https://github.com/JohnnyMorganz/StyLua (An opinionated Lua code formatter)
 # https://github.com/stefanzweifel/git-auto-commit-action (directly commit formatting)
+
+# Useful tools
+# https://docs.github.com/ru/actions/learn-github-actions/understanding-github-actions
 # https://github.com/peter-evans/create-pull-request (open a pull request with fixed formatting)
+#
+# https://pre-commit.com (A framework for managing and maintaining multi-language pre-commit hooks.)
+# https://github.com/marketplace/actions/wow-packager (release.sh generates an addon zip file from a Git, SVN, or Mercurial checkout.)
+# https://github.com/luarocks/lua-style-guide
+# https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Windows
+# https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis
+
 
