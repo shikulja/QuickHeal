@@ -20,9 +20,7 @@ jobs:
       - run: cargo build --release --all-features
 
  #- run: cargo install stylua
-    stylua:
-        runs-on: ubuntu-latest
-        steps:
+      steps:
             - uses: actions/checkout@v3
             - name: Run Stylua check
               uses: JohnnyMorganz/stylua-action@v3
