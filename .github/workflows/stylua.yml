@@ -7,16 +7,22 @@ on:
     branches: [ "rework-healmodes-and-max-HPS" ]
   pull_request:
     branches: [ "rework-healmodes-and-max-HPS" ]
-
-- uses: actions/checkout@v3
-- uses: JohnnyMorganz/stylua-action@v3
-  with:
-    token: ${{ secrets.GITHUB_TOKEN }}
-    version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-    # CLI arguments
-    args: --check .
+                  
+    name: stylua
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: JohnnyMorganz/stylua-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
+          # CLI arguments
+          args: --check .         
+                  
+                  
                   #run: stylua
-
-
-    
  #- run: cargo install stylua
