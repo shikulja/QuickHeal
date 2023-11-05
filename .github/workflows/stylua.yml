@@ -19,17 +19,17 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-        args:
+        args: *
     - name: Setup luarocks
       uses: leafo/gh-actions-luarocks@v4
 
  #   - name: Setup tools
  #     shell: bash
  #     run: |
-        sudo apt install -y curl unzip --no-install-recommends
-        bash ./utils/install_stylua.sh
-        luarocks install luacheck
-        luarocks install vusted
+ #       sudo apt install -y curl unzip --no-install-recommends
+ #       bash ./utils/install_stylua.sh
+ #       luarocks install luacheck
+ #       luarocks install vusted
  #   - name: Run tests
  #     shell: bash
  #     run: make integration
