@@ -19,7 +19,8 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-        args: *
+        args: --search-parent-directories
+        run: stylua
     - name: Setup luarocks
       uses: leafo/gh-actions-luarocks@v4
 
@@ -34,6 +35,6 @@ jobs:
  #     shell: bash
  #     run: make integration
 
-     - name: Run tests
-       shell: bash
-       run: stylua
+  #   - name: Run tests
+  #     shell: bash
+  #     run: stylua
