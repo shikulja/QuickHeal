@@ -29,8 +29,8 @@ jobs:
         ref: ${{ github.head_ref }}
     - name: Apply Actions 2
       uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: stylua formatting
+      with:
+        commit_message: stylua formatting
  #   - name: Setup luarocks
  #     uses: leafo/gh-actions-luarocks@v4
 
