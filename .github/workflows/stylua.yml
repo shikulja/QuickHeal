@@ -19,7 +19,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-        args: --search-parent-directories  . 
+        args: --search-parent-directories
     - name: Setup luarocks
       uses: leafo/gh-actions-luarocks@v4
 
