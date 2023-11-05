@@ -8,8 +8,6 @@ on:
   pull_request:
     branches: [ "rework-healmodes-and-max-HPS" ]
 
-
- #- run: cargo install stylua
 - uses: actions/checkout@v3
 - uses: JohnnyMorganz/stylua-action@v3
   with:
@@ -20,6 +18,5 @@ on:
                   #run: stylua
 
 
-       
-
-
+    
+ #- run: cargo install stylua
