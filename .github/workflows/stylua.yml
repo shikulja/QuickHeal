@@ -19,7 +19,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-        args: --g '*.lua' --g '!*.spec.lua' -- .
+        args: -g '*.lua'
  #   - name: Setup luarocks
  #     uses: leafo/gh-actions-luarocks@v4
 
