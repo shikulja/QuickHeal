@@ -36,4 +36,4 @@ jobs:
 
     - name: Run tests
  #    shell: bash
-      run: stylua
+      run: Stylua
