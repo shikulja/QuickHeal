@@ -17,8 +17,10 @@ jobs:
               uses: JohnnyMorganz/stylua-action@v3
               with:
                   # token is needed because the action allegedly downloads binary from github releases
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  token: ${{ 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 }}
                   # CLI arguments
                   args: --check .
                   version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
                   #run: stylua
+
+
