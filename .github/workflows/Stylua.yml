@@ -1,4 +1,4 @@
-name: Stylua
+name: Stylua check
 
 on:
     push:
@@ -12,10 +12,10 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Run Stylua check
-              uses: JohnnyMorganz/stylua-action@v3
+              uses: JohnnyMorganz/stylua-action@v1.1.1
               with:
                   # token is needed because the action allegedly downloads binary from github releases
                   token: ${{ secrets.GITHUB_TOKEN }}
                   # CLI arguments
                   args: --check .
-                  version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
+                  version: 0.18.2
